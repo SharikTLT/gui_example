@@ -27,7 +27,7 @@ public class MyForm extends JFrame {
                 new MyData("first2", "second2", randomScore()),
                 new MyData("first3", "second3", randomScore()));
 
-         table1.setModel(new MyTableModel(myDataList));
+        table1.setModel(new MyTableModel(myDataList));
         System.out.println("clicked");
 
     }
@@ -40,4 +40,5 @@ public class MyForm extends JFrame {
     public JPanel getMyPanel() {
         return myPanel;
     }
+
 }
