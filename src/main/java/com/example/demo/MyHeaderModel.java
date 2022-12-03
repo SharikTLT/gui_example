@@ -22,7 +22,6 @@ public class MyHeaderModel extends DefaultTableColumnModel {
             col.setModelIndex(i);
             this.addColumn(col);
         }
-
     }
 
 }

@@ -35,7 +35,7 @@ public class MyTableModel extends AbstractTableModel {
      */
     @Override
     public int getColumnCount() {
-        return 3;
+        return 4;
     }
 
     /**
@@ -49,12 +49,19 @@ public class MyTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         MyData data = rows.get(rowIndex);
-        switch (columnIndex){
+        switch (columnIndex) {
             case 0:
                 return data.getFirstName();
             case 1:
                 return data.getSecondName();
+            case 2:
+                return data.getScore();
         }
-        return data.getScore();
+        return data;
+    }
+
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return true;
     }
 }
