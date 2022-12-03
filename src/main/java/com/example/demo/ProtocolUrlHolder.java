@@ -23,6 +23,10 @@ public class ProtocolUrlHolder {
         return null;
     }
 
+    public synchronized boolean hasUrl() {
+        return url != null;
+    }
+
     public synchronized URL getUrl() {
         return url;
     }

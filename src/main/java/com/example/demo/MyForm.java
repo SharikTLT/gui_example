@@ -32,6 +32,9 @@ public class MyForm extends JFrame {
 
         urlToOpen = ProtocolUrlHolder.getInstance().getUnused();
         System.out.println("Second url = "+urlToOpen);
+        if(ProtocolUrlHolder.getInstance().hasUrl()){
+            //поиск модуля и его загрузка
+        }
 
         table1 = new JTable() {
 
