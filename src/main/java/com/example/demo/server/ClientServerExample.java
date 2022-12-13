@@ -90,7 +90,8 @@ public class ClientServerExample extends Thread {
     private void writePortToFile(int localPort) {
         byte[] bytes = String.valueOf(localPort).getBytes(StandardCharsets.UTF_8);
         try {
-            Files.write(new File(PORT_FILE).toPath(), bytes, StandardOpenOption.WRITE);
+            Files.write(new File(PORT_FILE).toPath(), bytes, StandardOpenOption.TRUNCATE_EXISTING);
+            System.out.println("Write to file " + localPort);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -129,6 +130,7 @@ public class ClientServerExample extends Thread {
             socket.getOutputStream().write((startUrl + NEWLINE).getBytes(StandardCharsets.UTF_8));
             return true;
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
     }
@@ -165,6 +167,7 @@ public class ClientServerExample extends Thread {
 
     /**
      * Синхронизация с мейном через exchanger
+     *
      * @param res
      */
     private void notifyMain(boolean res) {
